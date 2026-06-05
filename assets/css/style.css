@@ -83,6 +83,19 @@ a {
 }
 
 /* ******** HERO SECTION */
+
+/* Animazione di entrata */
+@keyframes apparizione {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .hero {
   background-color: #1F7A4D;
   color: white;
@@ -90,10 +103,18 @@ a {
   padding: 80px 20px;
 }
 
+.hero h2,
+.hero p,
+.hero .btn-hero {
+    opacity: 0;
+    animation: apparizione 1s ease-out forwards;
+}
+
 .hero h2 {
   font-size: 2.2rem;
   margin-top: 0;
   margin-bottom: 15px;
+  animation-delay: 0.2s;
 }
 
 .hero p {
@@ -101,6 +122,7 @@ a {
   max-width: 600px;
   margin: 0 auto 30px auto;
   opacity: 0.9;
+  animation-delay: 0.4s;
 }
 
 .hero .btn-hero {
@@ -113,6 +135,7 @@ a {
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.2s, transform 0.2s;
+  animation-delay: 0.6s;
 }
 
 .hero .btn-hero:hover {
