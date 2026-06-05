@@ -28,8 +28,12 @@ a {
 /* Aggiungi qui le tue regole, mobile-first. */
 
 
-/* ******** HEADER / NAVBAR (MOBILE-FIRST) */
+/* ******** HEADER / NAVBAR (STICKY E CAMBIO COLORE) */
 #site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
   background-color: white;
   color: black;
   padding: 15px 20px;
@@ -38,6 +42,11 @@ a {
   align-items: center;
   gap: 15px;
   border-bottom: 1px solid #eeeeee;
+}
+
+#site-header.scrolled {
+  background-color: black;
+  border-bottom: 1px solid #333;
 }
 
 #site-header a.logo {
@@ -51,8 +60,24 @@ a {
   transition: opacity 300ms;
 }
 
+#site-header.scrolled a.logo {
+  color: white;
+}
+
+#site-header.scrolled a.logo:hover {
+  color: #1F7A4D; 
+}
+
 #site-header a.logo i {
   color: #1F7A4D;
+}
+
+#site-header.scrolled a.logo i {
+  color: white;
+}
+
+#site-header.scrolled a.logo:hover i {
+    color: #1F7A4D;
 }
 
 #site-header a.logo:hover {
@@ -77,9 +102,18 @@ a {
   transition: background-color 300ms, color 300ms;
 }
 
+#site-header.scrolled .nav-menu ul li a {
+  color: white;
+}
+
 .nav-menu ul li a:hover {
   background-color: #eaf5ef; 
   color: #1F7A4D; 
+}
+
+#site-header.scrolled .nav-menu ul li a:hover {
+  background-color: #1F7A4D;
+  color: white;
 }
 
 /* ******** HERO SECTION */
