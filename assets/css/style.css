@@ -1,0 +1,308 @@
+/* Bloom — Week Project Settimana V
+   Reset minimale + tipografia di base. Da qui costruisci il layout. */
+
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555555; 
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Aggiungi qui le tue regole, mobile-first. */
+
+
+/* ******** HEADER / NAVBAR (MOBILE-FIRST) */
+#site-header {
+  background-color: white;
+  color: black;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#site-header a.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1F7A4D; 
+  cursor: pointer;
+  transition: opacity 300ms;
+}
+
+#site-header a.logo i {
+  color: #1F7A4D;
+}
+
+#site-header a.logo:hover {
+  opacity: 0.7;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-menu ul li a {
+  font-weight: 500;
+  color: #555555;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 300ms, color 300ms;
+}
+
+.nav-menu ul li a:hover {
+  background-color: #eaf5ef; 
+  color: #1F7A4D; 
+}
+
+/* ******** HERO SECTION */
+.hero {
+  background-color: #1F7A4D;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+
+.hero .btn-hero {
+  background-color: white;
+  color: #1F7A4D;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.hero .btn-hero:hover {
+  background-color: #EBFAF2;
+  transform: scale(1.03);
+}
+
+/* ******** SERVICES SECTION */
+.services-section {
+  background-color: #FAFAFA;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services-title {
+  color: #1F7A4D;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eeeeee;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translate(0, -5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: #1F7A4D;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555555;
+}
+
+/* ******** FOOTER SECTION */
+#site-footer {
+  background-color: #111111;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Allineamento al centro su mobile */
+  text-align: center;
+  gap: 5px;
+}
+
+#site-footer a.footer-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1F7A4D; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 300ms;
+}
+
+#site-footer a.footer-logo i {
+  color: #1F7A4D; 
+}
+
+#site-footer a.footer-logo:hover {
+  opacity: 0.7;
+}
+
+.footer-description {
+  margin: 5px 0 0 0;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-socials .social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #222222;
+  color: white;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+.footer-socials .social-btn:hover {
+  background-color: #248F59;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #838383;
+}
+
+/* ******** MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+  #site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 40px;
+  }
+
+  .cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: 48%;
+  }
+  
+  .card:last-child {
+    width: 100%;
+  }
+
+  #site-footer {
+    padding: 30px 40px;
+  }
+  
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Allineamento a sinistra su tablet e desktop */
+  .footer-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #site-header {
+    padding: 20px 60px;
+  }
+  
+  .cards-container {
+    max-width: 960px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .card, .card:last-child {
+    width: 280px;
+  }
+  
+  #site-footer {
+    padding: 30px 60px;
+  }
+}
