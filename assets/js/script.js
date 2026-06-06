@@ -14,6 +14,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
+//Modale
 const openModalBtn = document.querySelector('.btn-hero');
 const modalOverlay = document.getElementById('quote-modal');
 const closeModalBtn = document.querySelector('.close-modal');
@@ -30,4 +31,19 @@ modalOverlay.addEventListener('click', function(event) {
   if (event.target === modalOverlay) {
     modalOverlay.style.display = 'none';
   }
+});
+
+// Tema Scuro / Chiaro
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggle.textContent = 'Tema Chiaro';
+    } else {
+        themeToggle.textContent = 'Tema Scuro';
+    }
 });

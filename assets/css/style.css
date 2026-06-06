@@ -203,7 +203,7 @@ a {
   padding: 30px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   border: 1px solid #eeeeee;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   opacity: 0;
   animation: apparizione 1s ease-out forwards;
 }
@@ -213,7 +213,7 @@ a {
 .cards-container .card:nth-child(3) { animation-delay: 0.6s; }
 
 .card:hover {
-  transform: translate(0, -5px);
+  transform: translateY(-10px) !important;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -260,7 +260,7 @@ a {
   max-width: 400px;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   opacity: 0;
   animation: apparizione 1s ease-out forwards;
@@ -279,7 +279,7 @@ a {
 }
 
 .work-item:hover {
-  transform: translate(0, -5px);
+  transform: translateY(-10px) !important;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
@@ -308,7 +308,7 @@ a {
   padding: 30px 20px;
   border-radius: 8px;
   border: 1px solid #eeeeee;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   opacity: 0;
   animation: apparizione 1s ease-out forwards;
 }
@@ -327,7 +327,7 @@ a {
 }
 
 .team-card:hover {
-  transform: translate(0, -5px);
+  transform: translateY(-10px) !important;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -449,6 +449,69 @@ a {
   }
 }
 
+/* ******** CAROSELLO */
+.testimonials-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: white;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.testimonials-section h2 {
+  color: #1F7A4D;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: testimonialScroll 25s linear infinite;
+}
+
+.testimonial-item {
+  background-color: #FAFAFA;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 25px;
+  width: 300px;
+  flex-shrink: 0;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.testimonial-item p {
+  font-style: italic;
+  margin: 0 0 15px 0;
+  color: #555555;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.testimonial-item span {
+  display: block;
+  font-weight: bold;
+  color: #1F7A4D;
+  font-size: 0.9rem;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-10px) !important;
+}
+
+@keyframes testimonialScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 /* ******** FOOTER SECTION */
 #site-footer {
   background-color: #111111;
@@ -466,7 +529,7 @@ a {
 .footer-left {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Allineamento al centro su mobile */
+  align-items: center;
   text-align: center;
   gap: 5px;
 }
@@ -565,7 +628,6 @@ a {
     align-items: center;
   }
 
-  /* Allineamento a sinistra su tablet e desktop */
   .footer-left {
     align-items: flex-start;
     text-align: left;
@@ -592,4 +654,155 @@ a {
   #site-footer {
     padding: 30px 60px;
   }
+}
+
+/* ******** Dark Mode */
+html.dark-mode, body.dark-mode {
+  background-color: #161817;
+  color: #f1f5f9;
+}
+
+html.dark-mode #site-header, body.dark-mode #site-header {
+  background-color: #161817;
+  border-bottom-color: #262927;
+  color: #f1f5f9;
+}
+
+html.dark-mode #site-header a.logo, body.dark-mode #site-header a.logo,
+html.dark-mode #site-header a.logo i, body.dark-mode #site-header a.logo i,
+html.dark-mode .hero h2, body.dark-mode .hero h2,
+html.dark-mode .services-title, body.dark-mode .services-title,
+html.dark-mode .services-section h2, body.dark-mode .services-section h2,
+html.dark-mode .works-section h2, body.dark-mode .works-section h2,
+html.dark-mode .team-section h2, body.dark-mode .team-section h2,
+html.dark-mode .testimonials-section h2, body.dark-mode .testimonials-section h2,
+html.dark-mode .card-icon, body.dark-mode .card-icon,
+html.dark-mode .card i, body.dark-mode .card i,
+html.dark-mode .testimonial-item span, body.dark-mode .testimonial-item span,
+html.dark-mode #site-footer a.footer-logo, body.dark-mode #site-footer a.footer-logo,
+html.dark-mode #site-footer a.footer-logo i, body.dark-mode #site-footer a.footer-logo i,
+html.dark-mode .modal-content h3, body.dark-mode .modal-content h3,
+html.dark-mode #site-header.scrolled a.logo:hover, body.dark-mode #site-header.scrolled a.logo:hover,
+html.dark-mode #site-header.scrolled a.logo:hover i, body.dark-mode #site-header.scrolled a.logo:hover i {
+  color: #52c48a;
+}
+
+html.dark-mode .nav-menu ul li a, body.dark-mode .nav-menu ul li a {
+  color: #cbd5e1;
+}
+
+html.dark-mode .nav-menu ul li a:hover, body.dark-mode .nav-menu ul li a:hover {
+  background-color: #2e3532;
+  color: #52c48a;
+}
+
+html.dark-mode .hero, body.dark-mode .hero,
+html.dark-mode .works-section, body.dark-mode .works-section,
+html.dark-mode .testimonials-section, body.dark-mode .testimonials-section {
+  background-color: #161817;
+}
+
+html.dark-mode .services-section, body.dark-mode .services-section,
+html.dark-mode .team-section, body.dark-mode .team-section {
+  background-color: #222624;
+}
+
+html.dark-mode .card, body.dark-mode .card,
+html.dark-mode .team-card, body.dark-mode .team-card,
+html.dark-mode .testimonial-item, body.dark-mode .testimonial-item,
+html.dark-mode .work-item, body.dark-mode .work-item {
+  background-color: #2e3430;
+  border: 1px solid #434d49;
+  color: #f1f5f9;
+}
+
+html.dark-mode .card h3, body.dark-mode .card h3,
+html.dark-mode .team-card h3, body.dark-mode .team-card h3,
+html.dark-mode .work-item h3, body.dark-mode .work-item h3 {
+  color: #ffffff;
+}
+
+html.dark-mode .card p, body.dark-mode .card p,
+html.dark-mode .team-card p, body.dark-mode .team-card p,
+html.dark-mode .testimonial-item p, body.dark-mode .testimonial-item p,
+html.dark-mode .work-item p, body.dark-mode .work-item p {
+  color: #cbd5e1;
+}
+
+html.dark-mode .card:hover, body.dark-mode .card:hover,
+html.dark-mode .team-card:hover, body.dark-mode .team-card:hover,
+html.dark-mode .testimonial-item:hover, body.dark-mode .testimonial-item:hover,
+html.dark-mode .work-item:hover, body.dark-mode .work-item:hover {
+  background-color: #39413d;
+  border-color: #52c48a;
+  transform: translateY(-10px) !important;
+  box-shadow: 0 10px 25px rgba(82, 196, 138, 0.25);
+}
+
+html.dark-mode .hero .btn-hero, body.dark-mode .hero .btn-hero {
+  background-color: white;
+  color: #1F7A4D;
+}
+
+html.dark-mode .hero .btn-hero:hover, body.dark-mode .hero .btn-hero:hover {
+  background-color: #eaf5ef;
+}
+
+html.dark-mode .close-modal:hover, body.dark-mode .close-modal:hover {
+  background-color: #39413d;
+  color: #52c48a;
+}
+
+html.dark-mode .modal-form input:focus, body.dark-mode .modal-form input:focus,
+html.dark-mode .modal-form textarea:focus, body.dark-mode .modal-form textarea:focus {
+  border-color: #52c48a;
+}
+
+html.dark-mode .modal-form .btn-submit, body.dark-mode .modal-form .btn-submit {
+  background-color: #52c48a;
+  color: #161817;
+}
+
+html.dark-mode .modal-form .btn-submit:hover, body.dark-mode .modal-form .btn-submit:hover {
+  background-color: #63d199;
+}
+
+html.dark-mode .footer-socials .social-btn:hover, body.dark-mode .footer-socials .social-btn:hover {
+  background-color: #52c48a;
+  color: #161817;
+}
+
+html.dark-mode .modal-content, body.dark-mode .modal-content {
+  background-color: #1f2321;
+  color: #ffffff;
+}
+
+html.dark-mode .close-modal, body.dark-mode .close-modal {
+  color: #cbd5e1;
+}
+
+html.dark-mode .modal-form input, body.dark-mode .modal-form input,
+html.dark-mode .modal-form textarea, body.dark-mode .modal-form textarea {
+  background-color: #161817;
+  border-color: #434d49;
+  color: #ffffff;
+}
+
+html.dark-mode .modal-form input::placeholder, body.dark-mode .modal-form input::placeholder,
+html.dark-mode .modal-form textarea::placeholder, body.dark-mode .modal-form textarea::placeholder {
+  color: #707e78;
+}
+
+html.dark-mode #site-header.scrolled, body.dark-mode #site-header.scrolled {
+  background-color: #161817;
+  border-bottom-color: #2e3532;
+}
+
+html.dark-mode #site-header.scrolled .nav-menu ul li a, body.dark-mode #site-header.scrolled .nav-menu ul li a {
+  color: #cbd5e1;
+}
+
+html.dark-mode #site-header.scrolled .nav-menu ul li a:hover, body.dark-mode #site-header.scrolled .nav-menu ul li a:hover {
+  background-color: #52c48a;
+  color: #161817;
 }
