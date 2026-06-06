@@ -13,3 +13,21 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
+const openModalBtn = document.querySelector('.btn-hero');
+const modalOverlay = document.getElementById('quote-modal');
+const closeModalBtn = document.querySelector('.close-modal');
+
+openModalBtn.addEventListener('click', function() {
+  modalOverlay.style.display = 'flex'; 
+});
+
+closeModalBtn.addEventListener('click', function() {
+  modalOverlay.style.display = 'none'; 
+});
+
+modalOverlay.addEventListener('click', function(event) {
+  if (event.target === modalOverlay) {
+    modalOverlay.style.display = 'none';
+  }
+});

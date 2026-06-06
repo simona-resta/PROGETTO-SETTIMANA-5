@@ -331,6 +331,124 @@ a {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* ******** MODALE RICHIESTA PREVENTIVO */
+.modal-overlay {
+  display: none; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 2000; 
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  animation: modalSlideUp 0.4s ease-out forwards;
+}
+
+.modal-content h3 {
+  color: #1F7A4D;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 0.95rem;
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555555;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 300ms, color 300ms;
+}
+
+.close-modal:hover {
+  background-color: #eaf5ef;
+  color: #1F7A4D;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-form input, 
+.modal-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.modal-form input:focus, 
+.modal-form textarea:focus {
+  border-color: #1F7A4D;
+  outline: none;
+}
+
+.modal-form .btn-submit {
+  background-color: #1F7A4D;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  align-self: center;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.modal-form .btn-submit:hover {
+  background-color: #165C36;
+  transform: scale(1.03);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ******** FOOTER SECTION */
 #site-footer {
   background-color: #111111;
